@@ -1,0 +1,16 @@
+<table border="1" width="400">
+    <tr>
+        <td>Name</td>
+        <td>Email</td>
+    </tr>
+    <% users.each do |user| %>
+        <tr>
+            <td>
+                <a href="/profile?id=<%= user.id %>">
+                    <%= user.name %>
+                </a>
+            </td>
+            <td><%= user.email %></td>
+        </tr>
+    <% end %>
+</table>
