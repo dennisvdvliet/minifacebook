@@ -13,13 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20151217202958) do
 
-  create_table "groups", force: :cascade do |t|
-    t.string "name"
-  end
-
-  create_table "groups_users", force: :cascade do |t|
+  create_table "group_users", force: :cascade do |t|
     t.integer "user_id"
     t.integer "group_id"
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "users", force: :cascade do |t|
