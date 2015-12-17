@@ -1,0 +1,17 @@
+<table border="1" width="400">
+    <tr>
+        <td>Name</td>
+    </tr>
+
+    <% groups.each do |group| %>
+        <tr>
+            <td>
+                <a href="/groups/<%= group.id %>"><%= group.name %>
+                </a>
+
+            </td>
+            <td> <a href="/groups/<%= group.id %>/edit"> edit</a>
+        </tr>
+    <% end %>
+
+</table>
