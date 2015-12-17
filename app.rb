@@ -12,10 +12,22 @@ get "/all" do
     erb :all, locals: {:users => User.all}
 end
 
-get "/profile" do
+
+get "/profile/:id" do
     erb :all, locals: {:users =>
         User.where({:id => params[:id]})
     }
+end
+
+get "/users/:id/edit" do
+    user = User.find(params[:id])
+    erb :new_user, locals: {:user => user}
+    # create a new form to edit each user
+end
+
+post "/users/:id/edit" do
+    User.update(params[:id], :name => params[:name], :gender => params[:gender], :city => params[:city], :email => params[:email])
+    redirect "/users/"+params[:id]+"/edit"
 end
 
 get "/new" do
